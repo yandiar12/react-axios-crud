@@ -121,8 +121,8 @@ const App = () => {
             <Route exact path='/profile' component={Profile} />
             <Route path='/mod' component={BoardModerator} />
             <Route path='/admin' component={BoardAdmin} />
-            <Route path='/tutorials' component={TutorialList} />
             <Route path='/tutorials/:id' component={Tutorial} />
+            <Route path='/tutorials' component={TutorialList} />
             <Route path='/add-tutorial' component={AddTutorial} />
           </Switch>
         </div>
