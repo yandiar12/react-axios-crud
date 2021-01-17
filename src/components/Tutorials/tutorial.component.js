@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TutorialDataService from '../services/tutorial.service'
+import TutorialDataService from '../../services/tutorial.service'
 
 export default class Tutorial extends Component {
   constructor(props) {
@@ -24,6 +24,7 @@ export default class Tutorial extends Component {
 
   componentDidMount() {
     this.getTutorial(this.props.match.params.id)
+    console.log(this.props.match.params.id)
   }
 
   onChangeTitle(e) {

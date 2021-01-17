@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import TutorialDataService from '../services/tutorial.service'
+import TutorialDataService from '../../services/tutorial.service'
 import { Link } from 'react-router-dom'
 
 export default class TutorialsList extends Component {
@@ -128,6 +128,12 @@ export default class TutorialsList extends Component {
               ))}
           </ul>
 
+          <Link
+            to={'/add-tutorial'}
+            className='m-1 btn btn-sm btn-success'
+          >
+            Add
+          </Link>
           <button
             className='m-3 btn btn-sm btn-danger'
             onClick={this.removeAllTutorials}

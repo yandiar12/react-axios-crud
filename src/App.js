@@ -4,13 +4,17 @@ import { Router, Switch, Route, Link, Redirect } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import './App.css'
 
-import Login from './components/Login'
-import Register from './components/Register'
+import Login from './components/Auth/Login'
+import Register from './components/Auth/Register'
 import Home from './components/Home'
 import Profile from './components/Profile'
-import BoardUser from './components/BoardUser'
 import BoardModerator from './components/BoardModerator'
 import BoardAdmin from './components/BoardAdmin'
+
+//  Tutorials
+import AddTutorial from './components/Tutorials/add-tutorial.component'
+import Tutorial from './components/Tutorials/tutorial.component'
+import TutorialList from './components/Tutorials/tutorials-list.component'
 
 import { logout } from './actions/auth'
 import { clearMessage } from './actions/message'
@@ -72,13 +76,11 @@ const App = () => {
               </li>
             )}
 
-            {currentUser && (
-              <li className='nav-item'>
-                <Link to={'/user'} className='nav-link'>
-                  User
-                </Link>
-              </li>
-            )}
+            {currentUser && (<li className='nav-item'>
+              <Link to={'/tutorials'} className='nav-link'>
+                Tutorial
+              </Link>
+            </li>)}
 
             {currentUser ? (
               <div className='navbar-nav ml-auto'>
@@ -117,9 +119,11 @@ const App = () => {
             <Route exact path='/login' component={Login} />
             <Route exact path='/register' component={Register} />
             <Route exact path='/profile' component={Profile} />
-            <Route path='/user' component={BoardUser} />
             <Route path='/mod' component={BoardModerator} />
             <Route path='/admin' component={BoardAdmin} />
+            <Route path='/tutorials' component={TutorialList} />
+            <Route path='/tutorials/:id' component={Tutorial} />
+            <Route path='/add-tutorial' component={AddTutorial} />
           </Switch>
         </div>
       </div>
