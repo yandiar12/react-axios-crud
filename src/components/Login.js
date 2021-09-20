@@ -104,8 +104,10 @@ const Login = props => {
               {loading && (
                 <span className='spinner-border spinner-border-sm'></span>
               )}
+               Login
             </button>
           </div>
+          
 
           {message && (
             <div className='form-group'>
@@ -115,7 +117,8 @@ const Login = props => {
             </div>
           )}
 
-          <CheckButton style={{ display: 'none' }} ref={checkBtn} />
+          <CheckButton style={{ display: "none" }} ref={checkBtn} value="Login" />
+          
         </Form>
       </div>
     </div>
